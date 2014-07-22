@@ -157,13 +157,13 @@ while [ -n "$1" ]; do
 			echo date from $START_QDATE to $END_QDATE
 			echo "please waiting ...."
 			echo "------------------------------------------------------------------"
-            awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "USER", "DIR";}'
+            		awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "USER", "DIR";}'
 			echo "------------------------------------------------------------------"
 			for x in "$@"; do
 					SVN_DIR=$x
 					svn update $SVN_DIR > /dev/null
 					get_user_counts $SVN_DIR
-            echo "------------------------------------------------------------------"
+            		echo "------------------------------------------------------------------"
 			done
 			break;;
 
@@ -175,13 +175,13 @@ while [ -n "$1" ]; do
 			echo date from $START_QDATE to $END_QDATE
 			echo "please waiting ...."
 			echo "------------------------------------------------------------------"
-            awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "TYPE", "DIR";}'
+            		awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "TYPE", "DIR";}'
 			echo "------------------------------------------------------------------"
 			for x in "$@"; do
 					SVN_DIR=$x
 					svn update $SVN_DIR > /dev/null
 					get_type_counts $SVN_DIR
-	        echo "------------------------------------------------------------------"
+	        	echo "------------------------------------------------------------------"
 			done
 			break;;
 
@@ -193,13 +193,13 @@ while [ -n "$1" ]; do
 			echo date from $START_QDATE to $END_QDATE
 			echo "please waiting ...."
 			echo "-------------------------------------------------------------------"
-            awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "DIR";}'
+            		awk 'BEGIN{printf " %-10s %-10s %-10s %-10s %-12s \n", "TATAL", "NEW", "MOD", "DEL", "DIR";}'
 			echo "-------------------------------------------------------------------"
 			for x in "$@"; do
 					SVN_DIR=$x
 					svn update $SVN_DIR > /dev/null
 					get_all_counts $SVN_DIR
-            echo "------------------------------------------------------------------"
+            		echo "------------------------------------------------------------------"
 			done
 			break;;
 	esac
